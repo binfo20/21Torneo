@@ -1,7 +1,4 @@
-# TemplateProgetto
-
-* Cambiare il nome del progetto. 
-* Copiare la descrizione del progetto
+# TemplateProgetto 
 
 * Inserire i nomi dei componenti del gruppo e il loro ruolo prinicple
 
