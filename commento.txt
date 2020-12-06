@@ -1,0 +1,8 @@
+Allora, il progetto non segue l'organizzazione prevista: tutta la documentazione
+deve andare in una cartella apposta. 
+
+Secondo, non mi interessa avere un file .txt che contine i codici. Git è fatto per avere un sistema per scambiarsi codici funzionanti, quindi bisogna avere tutti i file nel porgetto in modo che sia compilabile. Non so che IDE usate, ma tutti hanno l'integrazione git/github. Imparate a usarla. In questo formato non guardo il codice, dato che perderei un sacco di tempo a spaccare file, fare progetto ecc.  Caricare tramite upload non è (più) un'opzione valida
+
+
+
+
