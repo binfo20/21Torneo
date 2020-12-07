@@ -25,8 +25,12 @@ public class Accoppiamento {
     /**
      *
      */
- protected   int [][] risultati=new int[2][63];
-    String finale="" ;
+    protected   int [][] risultati=new int[2][63];
+
+    /**
+     *
+     */
+    protected String finale="Torneo:" ;
     int part_dis=0;
     
     /**
@@ -34,19 +38,19 @@ public class Accoppiamento {
      * @param b
      */
     public void evoluzioneStringa (int b){ 
-for(int i=0;i<part_max;i++){ 
-    if(coppie[b]==a[i].id){
-    finale = finale + "\n" + a[i].getNome()+ " " + a[i].getCognome() + " " + risultati[0][b];    
-    }
-}
-    finale = finale +  "\n" + "vs" + "\n";   
-for(int j=0;j<part_max;j++){ 
-    if(coppie[b+1]==a[j].id){
-    finale = finale + a[j].getNome() + " " + a[j].getCognome() + " " + risultati[1][b];    
-    }
-}    
+            for(int i=0;i<part_max;i++){ 
+                if(coppie[b]==a[i].id){
+                   finale = finale + "\n" + a[i].getNome()+ " " + a[i].getCognome() + " " + risultati[0][b];    
+                }
+            }
+        finale = finale +  "\n" + "vs" + "\n";   
+            for(int j=0;j<part_max;j++){ 
+                if(coppie[b+1]==a[j].id){
+                    finale = finale + a[j].getNome() + " " + a[j].getCognome() + " " + risultati[1][b];    
+                }
+            }    
   
-  finale=finale + "\n" + "**************";
+        finale=finale + "\n" + "**************";
     
 }
         
@@ -86,26 +90,26 @@ return partita;
      risultati[0][b]=ris1;
      risultati[1][b]=ris2;
      evoluzioneStringa(b);             
-     if(ris1>=ris2){
-     for(int i=0;i<part_max;i++){ 
-     if(coppie[b+1]==a[i].id){
-          if(a[i].id<17){
-         n_teste--;
-         }
-     a[i].id=0;
-     }
-     }
-     }
-     else{
-     for(int i=0;i<part_max;i++){ 
-     if(coppie[b]==a[i].id){ 
-         if(a[i].id<17){
-         n_teste--;
-         }
-         a[i].id=0;
-         }
-     }       
-}
+        if(ris1>=ris2){
+            for(int i=0;i<part_max;i++){ 
+                if(coppie[b+1]==a[i].id){
+                    if(a[i].id<17){
+                        n_teste--;
+                    }
+                a[i].id=0;
+                }
+            }
+        }
+    else{
+        for(int i=0;i<part_max;i++){ 
+            if(coppie[b]==a[i].id){ 
+                if(a[i].id<17){
+                    n_teste--;
+                }
+              a[i].id=0;
+            }
+        }       
+    }
 
   }
 
@@ -136,43 +140,43 @@ return partita;
           //conta++;
         // }
       
-     for(int t=0;t<part_max;t++){
-         if(a[t].id!=0){
-     array_cont[conta]=a[t].id;
-     conta++;
-     }
-     }
+    for(int t=0;t<part_max;t++){
+        if(a[t].id!=0){
+            array_cont[conta]=a[t].id;
+            conta++;
+        }
+    }
      
      boolean control3=false;
      
-     if((n_part % 2) !=0){
-     while(control3==false){
-     casuale3 = (int)(Math.random()*part_max);
-     if(nonteste!=0){
-     if(array_cont[casuale3]<17 && array_cont[casuale3]!=0 ){
-     swap1 = array_cont[casuale3];
-     array_cont[casuale3]= array_cont[part_rim-1];
-     array_cont[part_rim-1]=swap1;
-     casuale3=swap1;
-     nonteste--;
-     part_rim--;
-     control3=true;
-     }
-     }
-     else{
-     if(array_cont[casuale3]!=0){
-     swap1 = array_cont[casuale3];
-     array_cont[casuale3]= array_cont[part_rim-1];
-     array_cont[part_rim-1]=swap1;
-     casuale3=swap1;
-     nonpart--;
-     part_rim--;
-     control3=true;
-     }   
-     }
+        if((n_part % 2) !=0){
+            while(control3==false){
+              casuale3 = (int)(Math.random()*part_max);
+                if(nonteste!=0){
+                    if(array_cont[casuale3]<17 && array_cont[casuale3]!=0 ){
+                       swap1 = array_cont[casuale3];
+                       array_cont[casuale3]= array_cont[part_rim-1];
+                       array_cont[part_rim-1]=swap1;
+                       casuale3=swap1;
+                       nonteste--;
+                       part_rim--;
+                       control3=true;
+                    }
+                }
+                else{
+                    if(array_cont[casuale3]!=0){
+                      swap1 = array_cont[casuale3];
+                      array_cont[casuale3]= array_cont[part_rim-1];
+                      array_cont[part_rim-1]=swap1;
+                      casuale3=swap1;
+                      nonpart--;
+                      part_rim--;
+                      control3=true;
+                    }   
+                }
      
-     }
-     }
+            }
+        }
     
      
      
@@ -181,71 +185,69 @@ return partita;
      
      
      
-     for(int i=0;i<n_part/2;i++){
+        for(int i=0;i<n_part/2;i++){
          
      //while(control1==false){
-      casuale = (int)(Math.random()*part_rim);
+           casuale = (int)(Math.random()*part_rim);
      //for(int l=0;l<n_part;l++){
      //System.out.println("giro1"+giri);
      //giri++;
-     if(array_cont[casuale]!=0){
-     swap1 = array_cont[casuale];
-     array_cont[casuale]= array_cont[part_rim-1];
-     array_cont[part_rim-1]=swap1;
-     casuale=swap1;
-     part_rim--;
-     }
+            if(array_cont[casuale]!=0){
+               swap1 = array_cont[casuale];
+               array_cont[casuale]= array_cont[part_rim-1];
+               array_cont[part_rim-1]=swap1;
+               casuale=swap1;
+               part_rim--;
+            }
         // giri++;
      //} 
      
      //}
-     while(control2==false){
-     casuale2 = (int)(Math.random()*part_rim); 
+            while(control2==false){
+              casuale2 = (int)(Math.random()*part_rim); 
      //System.out.println("giro2"+giri);
       //System.out.println("giri "+ giri);
         // giri++;
-     if(array_cont[casuale2]!=0){
+                if(array_cont[casuale2]!=0){
          // System.out.println("giri "+ giri);
          //giri++;
-     if(nonteste==nonpart){
+                    if(nonteste==nonpart){
          
-     if( casuale>=17 && array_cont[casuale2]<17){
-     swap2 = array_cont[casuale2];
-     array_cont[casuale2]= array_cont[part_rim-1];
-     array_cont[part_rim-1]=swap2;
-     casuale2=swap2;
-     part_rim--;
-     control2=true;  
-         }
-     else if( casuale<17 && array_cont[casuale2]>=17){
-     swap2 = array_cont[casuale2];
-     array_cont[casuale2]= array_cont[part_rim-1];
-     array_cont[part_rim-1]=swap1;
-     casuale2=swap2;
-     part_rim--;
-     control2=true;
-     }
-     else {
-     }
-     }
-     else{
-     swap2 = array_cont[casuale2];
-     array_cont[casuale2]= array_cont[part_rim-1];
-     array_cont[part_rim-1]=swap1;
-     casuale2=swap2;
-     part_rim--;
-     control2=true;
-     }
-     }   
-     }
+                        if( casuale>=17 && array_cont[casuale2]<17){
+                           swap2 = array_cont[casuale2];
+                           array_cont[casuale2]= array_cont[part_rim-1];
+                           array_cont[part_rim-1]=swap2;
+                           casuale2=swap2;
+                           part_rim--;
+                           control2=true;  
+                        }
+                       else if( casuale<17 && array_cont[casuale2]>=17){
+                          swap2 = array_cont[casuale2];
+                          array_cont[casuale2]= array_cont[part_rim-1];
+                          array_cont[part_rim-1]=swap1;
+                          casuale2=swap2;
+                          part_rim--;
+                          control2=true;
+                        }
+                        else {
+                        }
+                    } 
+                    else{
+                      swap2 = array_cont[casuale2];
+                      array_cont[casuale2]= array_cont[part_rim-1];
+                      array_cont[part_rim-1]=swap1;
+                      casuale2=swap2;
+                      part_rim--;
+                      control2=true;
+                    }
+                }   
+            }
      
      // controllo normale
      control2=false;
       
      coppie[pos]=casuale;
      coppie[pos+1]=casuale2;
-     System.out.println(pos + "pos" + casuale);
-     System.out.println(pos+1 + "pos" + casuale2);
    
      part_dis=casuale3;
      
@@ -266,7 +268,16 @@ return partita;
          
 }
  
- 
+    /**
+     *
+     */
+    public void String_vincitore(){
+        for(int i=0;i<part_max;i++){ 
+            if(a[i].id!=0){
+               finale = finale + "\n" + a[i].getNome()+ " " + a[i].getCognome() + " " + "ha vinto il torneo!";  
+            }  
+        }
+    }
  
     /**
      *
