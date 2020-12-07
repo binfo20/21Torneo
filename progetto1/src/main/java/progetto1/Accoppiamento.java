@@ -14,13 +14,26 @@ import static progetto1.InputEcontrollo.part_max;
  * @author gramm
  */
 public class Accoppiamento {
+
+    /**
+     *
+     */
     protected int coppie[]=new int[64];    
 //protected int fase_succ[]=new int[64];
  //int nonteste=n_teste; 
+
+    /**
+     *
+     */
  protected   int [][] risultati=new int[2][63];
     String finale="" ;
+    int part_dis=0;
     
-public void evoluzioneStringa (int b){ 
+    /**
+     *
+     * @param b
+     */
+    public void evoluzioneStringa (int b){ 
 for(int i=0;i<part_max;i++){ 
     if(coppie[b]==a[i].id){
     finale = finale + "\n" + a[i].getNome()+ " " + a[i].getCognome() + " " + risultati[0][b];    
@@ -37,8 +50,12 @@ for(int j=0;j<part_max;j++){
     
 }
         
-
-public String sfide1(int b){
+    /**
+     *
+     * @param b
+     * @return
+     */
+    public String sfide1(int b){
     String partita="";
     for(int i=0;i<part_max;i++){ 
     if(coppie[b]==a[i].id){
@@ -59,20 +76,32 @@ return partita;
        
 }
     
-  public void sfide2(int ris1,int ris2, int b){
+    /**
+     *
+     * @param ris1
+     * @param ris2
+     * @param b
+     */
+    public void sfide2(int ris1,int ris2, int b){
      risultati[0][b]=ris1;
      risultati[1][b]=ris2;
      evoluzioneStringa(b);             
      if(ris1>=ris2){
      for(int i=0;i<part_max;i++){ 
      if(coppie[b+1]==a[i].id){
+          if(a[i].id<17){
+         n_teste--;
+         }
      a[i].id=0;
      }
      }
      }
      else{
      for(int i=0;i<part_max;i++){ 
-     if(coppie[b]==a[i].id){   
+     if(coppie[b]==a[i].id){ 
+         if(a[i].id<17){
+         n_teste--;
+         }
          a[i].id=0;
          }
      }       
@@ -80,16 +109,10 @@ return partita;
 
   }
 
-
-
-
-
-
-
-
-
- 
- public void random(){
+    /**
+     *
+     */
+    public void random(){
      // int giri=0;
      int pos=0;
      int nonteste=n_teste;
@@ -108,6 +131,11 @@ return partita;
      int casuale_disp =0;
      int[] array_cont=new int[64];
      
+      //if(part_dis!=0){
+          //array_cont[conta]=part_dis;
+          //conta++;
+        // }
+      
      for(int t=0;t<part_max;t++){
          if(a[t].id!=0){
      array_cont[conta]=a[t].id;
@@ -115,21 +143,37 @@ return partita;
      }
      }
      
-     /*se sono dispari
      boolean control3=false;
      
- if((n_part % 2) !=0){
+     if((n_part % 2) !=0){
      while(control3==false){
-     casuale3 = (int)(Math.random()*16)+1;
-     for(int j=0;j<n_teste;j++){
-     if(casuale==a[j].id){
-     array_cont[j]=0;
+     casuale3 = (int)(Math.random()*part_max);
+     if(nonteste!=0){
+     if(array_cont[casuale3]<17 && array_cont[casuale3]!=0 ){
+     swap1 = array_cont[casuale3];
+     array_cont[casuale3]= array_cont[part_rim-1];
+     array_cont[part_rim-1]=swap1;
+     casuale3=swap1;
+     nonteste--;
+     part_rim--;
      control3=true;
      }
-     } 
+     }
+     else{
+     if(array_cont[casuale3]!=0){
+     swap1 = array_cont[casuale3];
+     array_cont[casuale3]= array_cont[part_rim-1];
+     array_cont[part_rim-1]=swap1;
+     casuale3=swap1;
+     nonpart--;
+     part_rim--;
+     control3=true;
+     }   
+     }
+     
      }
      }
-    */ 
+    
      
      
      
@@ -151,14 +195,20 @@ return partita;
      casuale=swap1;
      part_rim--;
      }
+        // giri++;
      //} 
      
      //}
      while(control2==false){
      casuale2 = (int)(Math.random()*part_rim); 
      //System.out.println("giro2"+giri);
+      //System.out.println("giri "+ giri);
+        // giri++;
      if(array_cont[casuale2]!=0){
+         // System.out.println("giri "+ giri);
+         //giri++;
      if(nonteste==nonpart){
+         
      if( casuale>=17 && array_cont[casuale2]<17){
      swap2 = array_cont[casuale2];
      array_cont[casuale2]= array_cont[part_rim-1];
@@ -197,6 +247,8 @@ return partita;
      System.out.println(pos + "pos" + casuale);
      System.out.println(pos+1 + "pos" + casuale2);
    
+     part_dis=casuale3;
+     
      pos=pos+2;
      if(casuale<=17){
      nonteste--; 
@@ -215,24 +267,12 @@ return partita;
 }
  
  
- // codice copiato in random se sono dispari
- public void part_dispari(){
-     boolean control3=false;
- if((n_part % 2) !=0){
-     while(control3==false){
-     int casuale = (int)(Math.random()*16);
-     for(int j=0;j<n_teste;j++){
-     if(casuale==a[j].id){
-     //fase_succ[0]=casuale;
-     control3=true;
-     }
-     } 
-     }
-     }
  
-}
- 
- @Override
+    /**
+     *
+     * @return
+     */
+    @Override
 public String toString() {
     return finale;
 }

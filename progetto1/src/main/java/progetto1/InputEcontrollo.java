@@ -11,40 +11,91 @@ import java.util.Scanner;
  */
 public class InputEcontrollo {
     Scanner in = new Scanner (System.in);
-static public partecipante a[]=new partecipante[64];
- 
-static public int part_max=0;
-protected int dim_num=0;
-static public int n_part=0;
-static public int n_teste=0;
 
-public int getN_part(){
+    /**
+     *
+     */
+    static public partecipante a[]=new partecipante[64];
+ 
+    /**
+     *
+     */
+    static public int part_max=0;
+
+    /**
+     *
+     */
+    protected int dim_num=0;
+
+    /**
+     *
+     */
+    static public int n_part=0;
+
+    /**
+     *
+     */
+    static public int n_teste=0;
+
+    /**
+     *
+     * @return
+     */
+    public int getN_part(){
 return n_part;
 }
 
-public int getN_teste(){
+    /**
+     *
+     * @return
+     */
+    public int getN_teste(){
 return n_teste;
 }
 
-public void setN_part(int n_part){
+    /**
+     *
+     * @param n_part
+     */
+    public void setN_part(int n_part){
 this.n_part=n_part; 
 this.part_max=n_part;
 }
 
-public void setN_teste(int n_teste){
+    /**
+     *
+     * @param n_teste
+     */
+    public void setN_teste(int n_teste){
 this.n_teste=n_teste;   
 }
 
-public String getA(int i){
+    /**
+     *
+     * @param i
+     * @return
+     */
+    public String getA(int i){
  return a[i].nome;  
 }
 
-public int getID(int i){
+    /**
+     *
+     * @param i
+     * @return
+     */
+    public int getID(int i){
 return a[i].id;    
 }
 
-
-public void inizializza(String nom , String cognom , int id_part , int i){
+    /**
+     *
+     * @param nom
+     * @param cognom
+     * @param id_part
+     * @param i
+     */
+    public void inizializza(String nom , String cognom , int id_part , int i){
   a[i].nome=nom;
   a[i].cognome=cognom;
   a[i].id=id_part;
@@ -54,9 +105,12 @@ public void inizializza(String nom , String cognom , int id_part , int i){
   dim_num++;
   }
 
-
-
-public boolean controlloID(int id_part){
+    /**
+     *
+     * @param id_part
+     * @return
+     */
+    public boolean controlloID(int id_part){
     boolean control=true;
   if(dim_num!=0){
   for(int j=0; j<dim_num;j++){
