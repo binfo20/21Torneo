@@ -152,7 +152,7 @@ else{
                         }
                  fase1.n_part=fase1.n_part/2;
                  posizione=0;
-       //
+       
     }
             fase2.String_vincitore();
             System.out.println(fase2);
