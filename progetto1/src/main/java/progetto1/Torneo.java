@@ -13,29 +13,32 @@ import static progetto1.InputEcontrollo.part_max;
  *
  * @author gramm
  */
-public class Accoppiamento {
+public class Torneo {
 
     /**
-     *
+     * this is the array where are memoryze the couple that have to match for pass in the next phase
      */
     protected int coppie[]=new int[64];    
 //protected int fase_succ[]=new int[64];
  //int nonteste=n_teste; 
 
     /**
-     *
+     * this is were the results are memorize
      */
     protected   int [][] risultati=new int[2][63];
 
     /**
-     *
+     * this is the synthase of the tournament
      */
     protected String finale="Torneo:" ;
     int part_dis=0;
     
     /**
      *
-     * @param b
+     *@param b is used to identify the couple
+     * 
+     *this function modify the string 
+     * 
      */
     public void evoluzioneStringa (int b){ 
             for(int i=0;i<part_max;i++){ 
@@ -56,8 +59,10 @@ public class Accoppiamento {
         
     /**
      *
-     * @param b
-     * @return
+     * @param b is used to identify the couple
+     * 
+     * @return a string with the name of the participants
+     * 
      */
     public String sfide1(int b){
     String partita="";
@@ -82,9 +87,12 @@ return partita;
     
     /**
      *
-     * @param ris1
-     * @param ris2
-     * @param b
+     * @param ris1 the points of the first participant
+     * 
+     * @param ris2 the points of the second participant
+     * 
+     * @param b is used to identify the couple
+     * 
      */
     public void sfide2(int ris1,int ris2, int b){
      risultati[0][b]=ris1;
@@ -114,7 +122,12 @@ return partita;
   }
 
     /**
-     *
+     * this create an array with the id in a random order 
+     * 
+     * the array is used for do the match
+     * 
+     * if the participants are odd one of those will pass in the next phase automatically
+     * 
      */
     public void random(){
      // int giri=0;
@@ -269,7 +282,8 @@ return partita;
 }
  
     /**
-     *
+     * modify the string finale with the neme of the winner 
+     * 
      */
     public void String_vincitore(){
         for(int i=0;i<part_max;i++){ 
@@ -281,7 +295,8 @@ return partita;
  
     /**
      *
-     * @return
+     * @return the synthase of the tournament
+     * 
      */
     @Override
 public String toString() {

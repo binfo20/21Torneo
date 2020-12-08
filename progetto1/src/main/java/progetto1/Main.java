@@ -15,6 +15,15 @@ public class Main {
 
     /**
      * @param args the command line arguments
+     * 
+     * 
+     * the program can crush if in a input the type of data are wrong
+     * 
+     *  we are use IOExeption for use code that crate modyfi a file.txt
+     *  the id can never be id more tahn 64 e eguals or less to 0
+     * 
+     * @throws IOException is used to save the file
+     * 
      */
     public static void main(String[] args) throws IOException{
        Scanner in = new Scanner (System.in);
@@ -125,7 +134,7 @@ else{
        
        
        
-            Accoppiamento fase2=new Accoppiamento();
+            Torneo fase2=new Torneo();
              int posizione=0;
        while(fase1.n_part!=1){
                  fase2.random();
