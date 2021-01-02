@@ -3,20 +3,20 @@ package javafxapplication1;
 
 import javafx.scene.control.Button;
 import javafx.event.ActionEvent;
-        
+import java.util.ArrayList;
+
 public class Controller {
- 
-    public Button[] array;
+    
+    public ArrayList<Button> array = new ArrayList<Button>();
     
     public void inizializza(){
-        array = new Button[31];
-        for(int i = 0; i < array.length; i++) {
-            array[i] = new Button("btn"+i);
+        for(int i = 1; i <= 31; i++) {
+            array.add(new Button("btn"+i));
         }
     }
     
     public void handle(ActionEvent e){
-        int i, index = 16;
+        /*int i, index = 16;
         for(i = 0; i<array.length; i++){
             if(e.getSource()==array[i]) break;
         }
@@ -26,11 +26,13 @@ public class Controller {
             }
         }
         array[index].setText(array[i].getText());
+        */
+        array.get(30).setText("WINNER"); //prova, che non funziona
     }
     
     public void reset(){
         for(int i = 16; i<31; i++){
-            array[i].setText("");
+            array.get(i).setText("");
         }
     }
     

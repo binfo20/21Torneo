@@ -7,37 +7,37 @@
 
 <AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafxapplication1.Controller">
    <children>
-      <Button fx:id="btn1" layoutX="24.0" layoutY="24.0" mnemonicParsing="false" onAction="#b1" prefHeight="25.0" prefWidth="52.0" text="Piero" />
-      <Button fx:id="btn2" layoutX="24.0" layoutY="73.0" mnemonicParsing="false" onAction="#b2" prefHeight="25.0" prefWidth="52.0" text="Aldo" />
-      <Button fx:id="btn17" layoutX="87.0" layoutY="48.0" mnemonicParsing="false" onAction="#b17" prefHeight="25.0" prefWidth="52.0" />
-      <Button fx:id="btn3" layoutX="24.0" layoutY="118.0" mnemonicParsing="false" onAction="#b3" prefHeight="25.0" prefWidth="52.0" text="Gabrio" />
-      <Button fx:id="btn4" layoutX="24.0" layoutY="166.0" mnemonicParsing="false" onAction="#b4" text="Gianni" />
-      <Button fx:id="btn18" layoutX="87.0" layoutY="143.0" mnemonicParsing="false" onAction="#b18" prefHeight="25.0" prefWidth="52.0" />
-      <Button fx:id="btn5" layoutX="24.0" layoutY="213.0" mnemonicParsing="false" onAction="#b5" prefHeight="25.0" prefWidth="52.0" text="Paolo" />
-      <Button fx:id="btn6" layoutX="24.0" layoutY="263.0" mnemonicParsing="false" onAction="#b6" prefHeight="25.0" prefWidth="52.0" text="Rob" />
-      <Button fx:id="btn19" layoutX="87.0" layoutY="238.0" mnemonicParsing="false" onAction="#b19" prefHeight="25.0" prefWidth="52.0" />
-      <Button fx:id="btn7" layoutX="24.0" layoutY="307.0" mnemonicParsing="false" onAction="#b7" text="Mattia" />
-      <Button fx:id="btn8" layoutX="24.0" layoutY="357.0" mnemonicParsing="false" onAction="#b8" prefHeight="25.0" prefWidth="50.0" text="Marco" />
-      <Button fx:id="btn20" layoutX="87.0" layoutY="332.0" mnemonicParsing="false" onAction="#b20" prefHeight="25.0" prefWidth="52.0" />
-      <Button fx:id="btn25" layoutX="154.0" layoutY="98.0" mnemonicParsing="false" onAction="#b25" prefHeight="25.0" prefWidth="52.0" />
-      <Button fx:id="btn26" layoutX="154.0" layoutY="288.0" mnemonicParsing="false" onAction="#b26" prefHeight="25.0" prefWidth="52.0" />
-      <Button fx:id="btn29" layoutX="206.0" layoutY="188.0" mnemonicParsing="false" onAction="#b29" prefHeight="25.0" prefWidth="52.0" />
+      <Button fx:id="btn1" layoutX="24.0" layoutY="24.0" mnemonicParsing="false" onAction="#handle" prefHeight="25.0" prefWidth="52.0" text="Piero" />
+      <Button fx:id="btn2" layoutX="24.0" layoutY="73.0" mnemonicParsing="false" onAction="#handle" prefHeight="25.0" prefWidth="52.0" text="Aldo" />
+      <Button fx:id="btn17" layoutX="87.0" layoutY="48.0" mnemonicParsing="false" onAction="#handle" prefHeight="25.0" prefWidth="52.0" />
+      <Button fx:id="btn3" layoutX="24.0" layoutY="118.0" mnemonicParsing="false" onAction="#handle" prefHeight="25.0" prefWidth="52.0" text="Gabrio" />
+      <Button fx:id="btn4" layoutX="24.0" layoutY="166.0" mnemonicParsing="false" onAction="#handle" text="Gianni" />
+      <Button fx:id="btn18" layoutX="87.0" layoutY="143.0" mnemonicParsing="false" onAction="#handle" prefHeight="25.0" prefWidth="52.0" />
+      <Button fx:id="btn5" layoutX="24.0" layoutY="213.0" mnemonicParsing="false" onAction="#handle" prefHeight="25.0" prefWidth="52.0" text="Paolo" />
+      <Button fx:id="btn6" layoutX="24.0" layoutY="263.0" mnemonicParsing="false" onAction="#handle" prefHeight="25.0" prefWidth="52.0" text="Rob" />
+      <Button fx:id="btn19" layoutX="87.0" layoutY="238.0" mnemonicParsing="false" onAction="#handle" prefHeight="25.0" prefWidth="52.0" />
+      <Button fx:id="btn7" layoutX="24.0" layoutY="307.0" mnemonicParsing="false" onAction="#handle" text="Mattia" />
+      <Button fx:id="btn8" layoutX="24.0" layoutY="357.0" mnemonicParsing="false" onAction="#handle" prefHeight="25.0" prefWidth="50.0" text="Marco" />
+      <Button fx:id="btn20" layoutX="87.0" layoutY="332.0" mnemonicParsing="false" onAction="#handle" prefHeight="25.0" prefWidth="52.0" />
+      <Button fx:id="btn25" layoutX="154.0" layoutY="98.0" mnemonicParsing="false" onAction="#handle" prefHeight="25.0" prefWidth="52.0" />
+      <Button fx:id="btn26" layoutX="154.0" layoutY="288.0" mnemonicParsing="false" onAction="#handle" prefHeight="25.0" prefWidth="52.0" />
+      <Button fx:id="btn29" layoutX="206.0" layoutY="188.0" mnemonicParsing="false" onAction="#handle" prefHeight="25.0" prefWidth="52.0" />
       <Button fx:id="btn31" layoutX="274.0" layoutY="131.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="52.0" />
-      <Button fx:id="btn30" layoutX="338.0" layoutY="188.0" mnemonicParsing="false" onAction="#b30" prefHeight="25.0" prefWidth="52.0" />
-      <Button fx:id="btn27" layoutX="397.0" layoutY="98.0" mnemonicParsing="false" onAction="#b27" prefHeight="25.0" prefWidth="52.0" />
-      <Button fx:id="btn28" layoutX="397.0" layoutY="288.0" mnemonicParsing="false" onAction="#b28" prefHeight="25.0" prefWidth="52.0" />
-      <Button fx:id="btn21" layoutX="460.0" layoutY="46.0" mnemonicParsing="false" onAction="#b21" prefHeight="25.0" prefWidth="52.0" />
-      <Button fx:id="btn22" layoutX="460.0" layoutY="141.0" mnemonicParsing="false" onAction="#b22" prefHeight="25.0" prefWidth="52.0" />
-      <Button fx:id="btn23" layoutX="460.0" layoutY="236.0" mnemonicParsing="false" onAction="#b23" prefHeight="25.0" prefWidth="52.0" />
-      <Button fx:id="btn24" layoutX="460.0" layoutY="330.0" mnemonicParsing="false" onAction="#b24" prefHeight="25.0" prefWidth="52.0" />
-      <Button fx:id="btn9" layoutX="528.0" layoutY="24.0" mnemonicParsing="false" onAction="#b9" prefHeight="25.0" prefWidth="52.0" text="Matt" />
-      <Button fx:id="btn10" layoutX="528.0" layoutY="73.0" mnemonicParsing="false" onAction="#b10" prefHeight="25.0" prefWidth="52.0" text="Sara" />
-      <Button fx:id="btn11" layoutX="528.0" layoutY="118.0" mnemonicParsing="false" onAction="#b11" prefHeight="25.0" prefWidth="56.0" text="Simone" />
-      <Button fx:id="btn12" layoutX="528.0" layoutY="166.0" mnemonicParsing="false" onAction="#b12" prefHeight="25.0" prefWidth="52.0" text="Giulia" />
-      <Button fx:id="btn13" layoutX="528.0" layoutY="213.0" mnemonicParsing="false" onAction="#b13" prefHeight="25.0" prefWidth="52.0" text="Luca" />
-      <Button fx:id="btn14" layoutX="528.0" layoutY="263.0" mnemonicParsing="false" onAction="#b14" prefHeight="25.0" prefWidth="52.0" text="Pietro" />
-      <Button fx:id="btn15" layoutX="528.0" layoutY="307.0" mnemonicParsing="false" onAction="#b15" text="Claudio" />
-      <Button fx:id="btn16" layoutX="528.0" layoutY="355.0" mnemonicParsing="false" onAction="#b16" prefHeight="25.0" prefWidth="52.0" text="Nicola" />
+      <Button fx:id="btn30" layoutX="338.0" layoutY="188.0" mnemonicParsing="false" onAction="#handle" prefHeight="25.0" prefWidth="52.0" />
+      <Button fx:id="btn27" layoutX="397.0" layoutY="98.0" mnemonicParsing="false" onAction="#handle" prefHeight="25.0" prefWidth="52.0" />
+      <Button fx:id="btn28" layoutX="397.0" layoutY="288.0" mnemonicParsing="false" onAction="#handle" prefHeight="25.0" prefWidth="52.0" />
+      <Button fx:id="btn21" layoutX="460.0" layoutY="46.0" mnemonicParsing="false" onAction="#handle" prefHeight="25.0" prefWidth="52.0" />
+      <Button fx:id="btn22" layoutX="460.0" layoutY="141.0" mnemonicParsing="false" onAction="#handle" prefHeight="25.0" prefWidth="52.0" />
+      <Button fx:id="btn23" layoutX="460.0" layoutY="236.0" mnemonicParsing="false" onAction="#handle" prefHeight="25.0" prefWidth="52.0" />
+      <Button fx:id="btn24" layoutX="460.0" layoutY="330.0" mnemonicParsing="false" onAction="#handle" prefHeight="25.0" prefWidth="52.0" />
+      <Button fx:id="btn9" layoutX="528.0" layoutY="24.0" mnemonicParsing="false" onAction="#handle" prefHeight="25.0" prefWidth="52.0" text="Matt" />
+      <Button fx:id="btn10" layoutX="528.0" layoutY="73.0" mnemonicParsing="false" onAction="#handle" prefHeight="25.0" prefWidth="52.0" text="Sara" />
+      <Button fx:id="btn11" layoutX="528.0" layoutY="118.0" mnemonicParsing="false" onAction="#handle" prefHeight="25.0" prefWidth="56.0" text="Simone" />
+      <Button fx:id="btn12" layoutX="528.0" layoutY="166.0" mnemonicParsing="false" onAction="#handle" prefHeight="25.0" prefWidth="52.0" text="Giulia" />
+      <Button fx:id="btn13" layoutX="528.0" layoutY="213.0" mnemonicParsing="false" onAction="#handle" prefHeight="25.0" prefWidth="52.0" text="Luca" />
+      <Button fx:id="btn14" layoutX="528.0" layoutY="263.0" mnemonicParsing="false" onAction="#handle" prefHeight="25.0" prefWidth="52.0" text="Pietro" />
+      <Button fx:id="btn15" layoutX="528.0" layoutY="307.0" mnemonicParsing="false" onAction="#handle" text="Claudio" />
+      <Button fx:id="btn16" layoutX="528.0" layoutY="355.0" mnemonicParsing="false" onAction="#handle" prefHeight="25.0" prefWidth="52.0" text="Nicola" />
       <Text layoutX="280.0" layoutY="115.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Winner" wrappingWidth="45.14453125" />
       <Text layoutX="11.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1" />
       <Text layoutX="11.0" layoutY="90.0" strokeType="OUTSIDE" strokeWidth="0.0" text="2" />
@@ -111,5 +111,7 @@
       <Line endX="-110.5" endY="82.5" layoutX="473.0" layoutY="217.0" startX="-110.5" startY="-4.0" />
       <Line endX="-111.5" endY="76.0" layoutX="475.0" layoutY="112.0" startX="-111.5" startY="-1.0" />
       <Line endX="100.0" layoutX="299.0" layoutY="110.0" startX="64.0" />
+      <Line endX="96.0" endY="-2.5" layoutX="363.0" layoutY="156.0" startX="59.0" startY="-2.5" />
+      <Line endX="97.5" layoutX="324.0" layoutY="153.0" startX="97.5" startY="-30.0" />
     </children>
 </AnchorPane>
