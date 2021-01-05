@@ -14,14 +14,12 @@ import javafx.fxml.FXMLLoader;
 public class JavaFXApplication1 extends Application implements EventHandler<ActionEvent> {
     
     @Override
-    public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("FXML.fxml"));
-        
-        Scene scene = new Scene(root, 1000, 800);
-        
-        primaryStage.setTitle("Test");
-        primaryStage.setScene(scene);
-        primaryStage.show();
+    public void start(Stage stage) throws Exception{
+        Parent root = FXMLLoader.load(getClass().getResource("FXML.fxml"));     
+        Scene scene = new Scene(root);
+        stage.setTitle("Torneo");
+        stage.setScene(scene);
+        stage.show();
     }
 
     public static void main(String[] args) {
