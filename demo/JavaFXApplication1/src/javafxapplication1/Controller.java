@@ -48,9 +48,12 @@ public class Controller implements Initializable {
             double number;
             try{
                 number = Double.valueOf(punteggio.getText());
-                label.setText("Ok, ha vinto con " + String.valueOf(number) + "!");
+                label.setText("Ok, ha vinto con " + String.valueOf(number) + " punti!");
                 button_control = true;
                 punteggio.setText(null);
+                if(!buttons[30].getText().equals("")){
+                    label.setText("Il torneo è stato vinto da: " + buttons[30].getText() + " con " + String.valueOf(number) + " punti!");
+                }
             } 
             catch(Exception e){
                 label.setText("HEY! INSERISCI UN NUMERO VERO!");
