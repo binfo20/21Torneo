@@ -136,5 +136,6 @@
       <Text layoutX="647.0" layoutY="342.0" strokeType="OUTSIDE" strokeWidth="0.0" text="30" />
       <TextField fx:id="punteggio" layoutX="362.0" layoutY="645.0" />
       <Button layoutX="582.0" layoutY="645.0" mnemonicParsing="false" onAction="#invioButton" text="Invio" />
+      <Button layoutX="697.0" layoutY="645.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="148.0" onAction="#mostraPunteggio" text="Mostra Punteggio" />
     </children>
 </AnchorPane>

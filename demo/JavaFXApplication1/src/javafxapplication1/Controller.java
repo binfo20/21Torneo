@@ -20,11 +20,13 @@ public class Controller implements Initializable {
     @FXML private Button[] buttons;
     @FXML private TextField punteggio;
     
-    boolean button_control = true;
-    
+    private int button_control = 1;
+    private int[] punteggi;
+    private int temp;
+   
     @FXML
     private void handleButtonAction(ActionEvent event) {
-        if(button_control){
+        if(button_control==1){
             Button btn_source = (Button)event.getSource();
             String btn_id = btn_source.getId().replace("btn", "");
             int b = Integer.parseInt(btn_id);
@@ -37,28 +39,42 @@ public class Controller implements Initializable {
             }
             buttons[(b+n)-1].setText(btn_source.getText());
             label.setText("Con quale punteggio ha vinto " + btn_source.getText() +"?");
-            button_control = false;
+            temp = b+n-17;
+            button_control = 0;
         }
     }
     
     @FXML
     private void invioButton(ActionEvent event){
-        if(!button_control){
-            String text = punteggio.getText();
-            double number;
-            try{
-                number = Double.valueOf(punteggio.getText());
-                label.setText("Ok, ha vinto con " + String.valueOf(number) + " punti!");
-                button_control = true;
-                punteggio.setText(null);
-                if(!buttons[30].getText().equals("")){
-                    label.setText("Il torneo è stato vinto da: " + buttons[30].getText() + " con " + String.valueOf(number) + " punti!");
-                }
-            } 
-            catch(Exception e){
-                label.setText("HEY! INSERISCI UN NUMERO VERO!");
+        String text = punteggio.getText();
+        int number; 
+        String valueOfNumber;
+        try{
+            number = Integer.valueOf(text);
+            valueOfNumber = String.valueOf(number);
+        }
+        catch(Exception e){
+            label.setText("HEY! INSERISCI UN NUMERO VERO!");
+            return;
+        }
+        if(button_control==0){
+            label.setText("Ok, ha vinto con " + valueOfNumber + " punti!");
+            punteggi[temp] = number;
+            button_control = 1;
+            punteggio.setText(null);
+            if(!buttons[30].getText().equals("")){
+                label.setText("Il torneo è stato vinto da: " + buttons[30].getText() + " con " + valueOfNumber + " punti!");
             }
         }
+        if(button_control==2){
+            label.setText(buttons[number-1].getText() + " ha vinto con " + punteggi[number-17] + " punti!");
+        }
+    }
+    
+    @FXML
+    private void mostraPunteggio(ActionEvent event){
+        label.setText("Di quale posizione vuoi vedere il punteggio? 17->31");
+        button_control = 2;
     }
     
     @Override
@@ -68,6 +84,7 @@ public class Controller implements Initializable {
             btn12, btn13, btn14, btn15, btn16, btn17, btn18, btn19, btn20, 
             btn21, btn22, btn23, btn24, btn25, btn26, btn27, btn28, btn29, 
             btn30, btn31};
+        punteggi = new int[15];
     }    
     
 }
