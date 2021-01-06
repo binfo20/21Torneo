@@ -77,6 +77,14 @@ public class Controller implements Initializable {
         button_control = 2;
     }
     
+    public Button[] getButtons(){
+        return buttons;
+    }
+    
+    public int[] getPunteggi(){
+        return punteggi;
+    }
+    
     @Override
     public void initialize(URL url, ResourceBundle rb){
         buttons = new Button[]{
