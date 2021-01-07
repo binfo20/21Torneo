@@ -11,6 +11,9 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
 
 public class Controller implements Initializable {
     
@@ -106,7 +109,7 @@ public class Controller implements Initializable {
         
         for(int i=1;i< 31;i++){
             
-             nick = nick + " ; " + buttons[i].getText();
+             nick = nick + "\n" + buttons[i].getText();
             }
         
             try {
@@ -122,5 +125,24 @@ public class Controller implements Initializable {
         
         
     }
+        
+        public  void load() {  
+    try {
+      File myObj = new File("save.txt");
+      Scanner myReader = new Scanner(myObj); 
+      for(int i=0;i<31;i++){
+          buttons[i].setText(" ");
+      }
+      for (int i =0; i<31; i++) {
+        
+        buttons[i].setText(myReader.nextLine());
+        
+      }
+      myReader.close();
+    } catch (FileNotFoundException e) {
+      System.out.println("An error occurred.");
+      e.printStackTrace();
+    } 
+  }
    
 }

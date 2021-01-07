@@ -135,9 +135,9 @@
       <Text layoutX="388.0" layoutY="330.0" strokeType="OUTSIDE" strokeWidth="0.0" text="29" />
       <Text layoutX="647.0" layoutY="342.0" strokeType="OUTSIDE" strokeWidth="0.0" text="30" />
       <TextField fx:id="punteggio" layoutX="326.0" layoutY="649.0" />
-      <Button layoutX="540.0" layoutY="645.0" mnemonicParsing="false" onAction="#invioButton" text="Invio" />
-      <Button layoutX="650.0" layoutY="646.0" mnemonicParsing="false" onAction="#mostraPunteggio" prefHeight="31.0" prefWidth="148.0" text="Mostra Punteggio" />
+      <Button layoutX="540.0" layoutY="648.0" mnemonicParsing="false" onAction="#invioButton" text="Invio" />
+      <Button layoutX="640.0" layoutY="646.0" mnemonicParsing="false" onAction="#mostraPunteggio" prefHeight="31.0" prefWidth="148.0" text="Mostra Punteggio" />
       <Button layoutX="483.0" layoutY="676.0" mnemonicParsing="false" onAction="#save" prefHeight="25.0" prefWidth="55.0" text="Salva" />
-      <Button layoutX="578.0" layoutY="676.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="55.0" text="Carica" />
+      <Button layoutX="583.0" layoutY="676.0" mnemonicParsing="false" onAction="#load" prefHeight="25.0" prefWidth="55.0" text="Carica" />
     </children>
 </AnchorPane>
