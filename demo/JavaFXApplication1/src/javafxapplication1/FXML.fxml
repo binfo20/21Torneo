@@ -8,7 +8,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafxapplication1.Controller">
+<AnchorPane id="AnchorPane" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafxapplication1.Controller">
     <children>
       <Button fx:id="btn1" layoutX="39.0" layoutY="28.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="40.0" prefWidth="100.0" text="Piero" />
       <Button fx:id="btn2" layoutX="39.0" layoutY="108.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="40.0" prefWidth="100.0" text="Aldo" />
@@ -134,8 +134,10 @@
       <Text layoutX="374.0" layoutY="153.0" strokeType="OUTSIDE" strokeWidth="0.0" text="25" />
       <Text layoutX="388.0" layoutY="330.0" strokeType="OUTSIDE" strokeWidth="0.0" text="29" />
       <Text layoutX="647.0" layoutY="342.0" strokeType="OUTSIDE" strokeWidth="0.0" text="30" />
-      <TextField fx:id="punteggio" layoutX="362.0" layoutY="645.0" />
-      <Button layoutX="582.0" layoutY="645.0" mnemonicParsing="false" onAction="#invioButton" text="Invio" />
-      <Button layoutX="697.0" layoutY="645.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="148.0" onAction="#mostraPunteggio" text="Mostra Punteggio" />
+      <TextField fx:id="punteggio" layoutX="326.0" layoutY="649.0" />
+      <Button layoutX="540.0" layoutY="645.0" mnemonicParsing="false" onAction="#invioButton" text="Invio" />
+      <Button layoutX="650.0" layoutY="646.0" mnemonicParsing="false" onAction="#mostraPunteggio" prefHeight="31.0" prefWidth="148.0" text="Mostra Punteggio" />
+      <Button layoutX="483.0" layoutY="676.0" mnemonicParsing="false" onAction="#save" prefHeight="25.0" prefWidth="55.0" text="Salva" />
+      <Button layoutX="578.0" layoutY="676.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="55.0" text="Carica" />
     </children>
 </AnchorPane>

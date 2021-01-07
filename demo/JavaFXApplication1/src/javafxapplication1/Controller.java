@@ -1,6 +1,8 @@
-
 package javafxapplication1;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -93,6 +95,32 @@ public class Controller implements Initializable {
             btn21, btn22, btn23, btn24, btn25, btn26, btn27, btn28, btn29, 
             btn30, btn31};
         punteggi = new int[15];
-    }    
-    
+    }   
+        @FXML
+        public void save() {
+        
+        
+        String nick = "";
+        
+        nick = nick + buttons[0].getText();
+        
+        for(int i=1;i< 31;i++){
+            
+             nick = nick + " ; " + buttons[i].getText();
+            }
+        
+            try {
+                BufferedWriter writer = new BufferedWriter(new FileWriter("./save.txt"));
+
+            writer.write(nick);
+
+            writer.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        
+        
+        
+    }
+   
 }
