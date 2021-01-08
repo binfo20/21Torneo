@@ -3,18 +3,53 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
 <AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafxapplication1.Giocatori">
    <children>
-      <Text layoutX="226.0" layoutY="94.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Inserisci nome dei giocatori andando a capo " textAlignment="CENTER" wrappingWidth="148.62890625" />
+      <Text layoutX="226.0" layoutY="86.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Inserisci nome dei giocatori andando a capo " textAlignment="CENTER" wrappingWidth="148.62890625" />
       <Button layoutX="200.0" layoutY="349.0" mnemonicParsing="false" onAction="#insert" prefHeight="25.0" prefWidth="200.0" text="Invia" />
       <Text layoutX="214.0" layoutY="59.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Torneo">
          <font>
             <Font size="55.0" />
          </font>
       </Text>
-      <TextField layoutX="198.0" layoutY="121.0" prefHeight="220.0" prefWidth="200.0" fx:id="txt"/>
+      <TextField fx:id="t1" layoutX="40.0" layoutY="115.0" prefHeight="34.0" prefWidth="102.0" />
+      <TextField fx:id="t2" layoutX="40.0" layoutY="166.0" prefHeight="34.0" prefWidth="102.0" />
+      <TextField fx:id="t3" layoutX="40.0" layoutY="214.0" prefHeight="34.0" prefWidth="102.0" />
+      <TextField fx:id="t4" layoutX="40.0" layoutY="264.0" prefHeight="34.0" prefWidth="102.0" />
+      <TextField fx:id="t5" layoutX="175.0" layoutY="116.0" prefHeight="34.0" prefWidth="102.0" />
+      <TextField fx:id="t6" layoutX="175.0" layoutY="164.0" prefHeight="34.0" prefWidth="102.0" />
+      <TextField fx:id="t7" layoutX="175.0" layoutY="214.0" prefHeight="34.0" prefWidth="102.0" />
+      <TextField fx:id="t8" layoutX="175.0" layoutY="265.0" prefHeight="34.0" prefWidth="102.0" />
+      <TextField fx:id="t9" layoutX="324.0" layoutY="115.0" prefHeight="34.0" prefWidth="102.0" />
+      <TextField fx:id="t10" layoutX="324.0" layoutY="163.0" prefHeight="34.0" prefWidth="102.0" />
+      <TextField fx:id="t11" layoutX="324.0" layoutY="213.0" prefHeight="34.0" prefWidth="102.0" />
+      <TextField fx:id="t12" layoutX="324.0" layoutY="264.0" prefHeight="34.0" prefWidth="102.0" />
+      <TextField fx:id="t13" layoutX="462.0" layoutY="115.0" prefHeight="34.0" prefWidth="102.0" />
+      <TextField fx:id="t14" layoutX="462.0" layoutY="163.0" prefHeight="34.0" prefWidth="102.0" />
+      <TextField fx:id="t15" layoutX="462.0" layoutY="213.0" prefHeight="34.0" prefWidth="102.0" />
+      <TextField fx:id="t16" layoutX="462.0" layoutY="264.0" prefHeight="34.0" prefWidth="102.0" />
+      <Text layoutX="33.0" layoutY="137.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1" />
+      <Text layoutX="33.0" layoutY="188.0" strokeType="OUTSIDE" strokeWidth="0.0" text="2" />
+      <Text layoutX="33.0" layoutY="235.0" strokeType="OUTSIDE" strokeWidth="0.0" text="3" />
+      <Text layoutX="33.0" layoutY="286.0" strokeType="OUTSIDE" strokeWidth="0.0" text="4" />
+      <Text layoutX="168.0" layoutY="137.0" strokeType="OUTSIDE" strokeWidth="0.0" text="5" />
+      <Text layoutX="168.0" layoutY="188.0" strokeType="OUTSIDE" strokeWidth="0.0" text="6" />
+      <Text layoutX="168.0" layoutY="235.0" strokeType="OUTSIDE" strokeWidth="0.0" text="7" />
+      <Text layoutX="168.0" layoutY="286.0" strokeType="OUTSIDE" strokeWidth="0.0" text="8" />
+      <Text layoutX="315.0" layoutY="137.0" strokeType="OUTSIDE" strokeWidth="0.0" text="9" />
+      <Text layoutX="312.0" layoutY="187.0" strokeType="OUTSIDE" strokeWidth="0.0" text="10" />
+      <Text layoutX="312.0" layoutY="235.0" strokeType="OUTSIDE" strokeWidth="0.0" text="11" />
+      <Text layoutX="312.0" layoutY="286.0" strokeType="OUTSIDE" strokeWidth="0.0" text="12" />
+      <Text layoutX="450.0" layoutY="137.0" strokeType="OUTSIDE" strokeWidth="0.0" text="13" />
+      <Text layoutX="450.0" layoutY="187.0" strokeType="OUTSIDE" strokeWidth="0.0" text="14" />
+      <Text layoutX="450.0" layoutY="236.0" strokeType="OUTSIDE" strokeWidth="0.0" text="15" />
+      <Text layoutX="450.0" layoutY="286.0" strokeType="OUTSIDE" strokeWidth="0.0" text="16" />
+      <Line endX="-100.0" endY="264.6494140625" layoutX="256.0" layoutY="73.0" startX="-100.0" />
+      <Line endX="-100.0" endY="187.6494140625" layoutX="400.0" layoutY="115.0" startX="-100.0" />
+      <Line endX="-100.0" endY="264.6494140625" layoutX="542.0" layoutY="72.0" startX="-100.0" />
    </children>
 </AnchorPane>

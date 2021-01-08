@@ -26,11 +26,13 @@ public class Giocatori implements Initializable {
 
     
      @FXML private Button btn1;
-     @FXML private TextField txt;
-    
+     @FXML private TextField t1,t2,t3,t4,t5,t6,t7,t8,t9,t10,t11,t12,t13,t14,t15,t16;
+     @FXML private TextField [] txts;
+     public static String nicks[] = new String[16];
+     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        txts = new TextField[]{t1,t2,t3,t4,t5,t6,t7,t8,t9,t10,t11,t12,t13,t14,t15,t16};
     }    
     
     
@@ -38,6 +40,13 @@ public class Giocatori implements Initializable {
     @FXML
     public void insert () throws Exception{
         
+        
+        
+        for (int i = 0; i<16 ;i++) {
+        
+            nicks[i] = txts[i].getText();
+            
+        }
         
         Stage stage = JavaFXApplication1.getStage();
         Parent root = FXMLLoader.load(getClass().getResource("FXML.fxml"));     
@@ -47,6 +56,12 @@ public class Giocatori implements Initializable {
         stage.show();
     
     }
-
+    
+    
+    public String getText(int index){
+    
+        return nicks[index];
+    
+    }
 
 }

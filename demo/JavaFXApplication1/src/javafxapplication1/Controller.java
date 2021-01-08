@@ -128,6 +128,17 @@ public class Controller implements Initializable {
         
     }
         
+        @FXML
+        public void transfer(){
+        Giocatori a = new Giocatori();
+            for (int i = 0; i<1; i++){
+            
+                buttons[i].setText(a.getText(i));
+            
+            }
+        
+        }
+        
         public  void load() {  
     try {
       File myObj = new File("save.txt");
