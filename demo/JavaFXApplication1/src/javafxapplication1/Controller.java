@@ -98,6 +98,8 @@ public class Controller implements Initializable {
             btn21, btn22, btn23, btn24, btn25, btn26, btn27, btn28, btn29, 
             btn30, btn31};
         punteggi = new int[15];
+        
+        
     }   
         @FXML
         public void save() {
