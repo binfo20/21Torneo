@@ -1,3 +1,4 @@
+
 package javafxapplication1;
 
 import java.io.BufferedWriter;
@@ -24,7 +25,6 @@ public class Controller implements Initializable {
     @FXML private Label label;
     @FXML private Button[] buttons;
     @FXML private TextField punteggio;
-    
     private int button_control = 1;
     private int[] punteggi;
     private int temp;
@@ -35,6 +35,7 @@ public class Controller implements Initializable {
             Button btn_source = (Button)event.getSource();
             String btn_id = btn_source.getId().replace("btn", "");
             int b = Integer.parseInt(btn_id);
+            if(buttons[b-1].getText().equals("")) return;
             int n, i = b;
             if(b%2==0){ //pari 
                 for(n = 15; i>2; n--) i-=2; 
@@ -82,12 +83,42 @@ public class Controller implements Initializable {
         button_control = 2;
     }
     
-    public Button[] getButtons(){
-        return buttons;
+    @FXML
+    public void save() {
+        String nick = "";
+        nick = nick + buttons[0].getText();
+        for(int i=1;i< 31;i++){
+            nick = nick + "\n" + buttons[i].getText();
+        }
+        try {
+            BufferedWriter writer = new BufferedWriter(new FileWriter("./save.txt"));
+            writer.write(nick);
+            writer.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+       
+    @FXML
+    public void load() {  
+        try {
+            File myObj = new File("save.txt");
+            Scanner myReader = new Scanner(myObj); 
+            for(int i=0;i<31;i++){
+                buttons[i].setText(" ");
+            }
+            for (int i =0; i<31; i++) {
+                buttons[i].setText(myReader.nextLine());
+            }
+            myReader.close();
+        } catch (FileNotFoundException e){
+            System.out.println("An error occurred.");
+            e.printStackTrace();
+        } 
     }
     
-    public int[] getPunteggi(){
-        return punteggi;
+    public void transfer(String[] giocatori){
+        for(int i = 0; i<16; i++) buttons[i].setText(giocatori[i]);
     }
     
     @Override
@@ -97,65 +128,7 @@ public class Controller implements Initializable {
             btn12, btn13, btn14, btn15, btn16, btn17, btn18, btn19, btn20, 
             btn21, btn22, btn23, btn24, btn25, btn26, btn27, btn28, btn29, 
             btn30, btn31};
-        punteggi = new int[15];
-        
-        
-    }   
-        @FXML
-        public void save() {
-        
-        
-        String nick = "";
-        
-        nick = nick + buttons[0].getText();
-        
-        for(int i=1;i< 31;i++){
-            
-             nick = nick + "\n" + buttons[i].getText();
-            }
-        
-            try {
-                BufferedWriter writer = new BufferedWriter(new FileWriter("./save.txt"));
-
-            writer.write(nick);
-
-            writer.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        
-        
-        
-    }
-        
-        @FXML
-        public void transfer(){
-        Giocatori a = new Giocatori();
-            for (int i = 0; i<1; i++){
-            
-                buttons[i].setText(a.getText(i));
-            
-            }
-        
-        }
-        
-        public  void load() {  
-    try {
-      File myObj = new File("save.txt");
-      Scanner myReader = new Scanner(myObj); 
-      for(int i=0;i<31;i++){
-          buttons[i].setText(" ");
-      }
-      for (int i =0; i<31; i++) {
-        
-        buttons[i].setText(myReader.nextLine());
-        
-      }
-      myReader.close();
-    } catch (FileNotFoundException e) {
-      System.out.println("An error occurred.");
-      e.printStackTrace();
-    } 
-  }
+        punteggi = new int[15]; 
+    }  
    
 }
