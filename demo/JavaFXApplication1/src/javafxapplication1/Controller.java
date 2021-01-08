@@ -1,149 +1,148 @@
 package javafxapplication1;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
+import javafx.scene.control.Label;
 import javafx.scene.control.Button;
+import javafx.scene.control.TextField;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
 
-public class Controller {
- 
-    public Button btn1;
-    public Button btn2;
-    public Button btn3;
-    public Button btn4;
-    public Button btn5;
-    public Button btn6;
-    public Button btn7;
-    public Button btn8;
-    public Button btn9;
-    public Button btn10;
-    public Button btn11;
-    public Button btn12;
-    public Button btn13;
-    public Button btn14;
-    public Button btn15;
-    public Button btn16;
-    public Button btn17;
-    public Button btn18;
-    public Button btn19;
-    public Button btn20;
-    public Button btn21;
-    public Button btn22;
-    public Button btn23;
-    public Button btn24;
-    public Button btn25;
-    public Button btn26;
-    public Button btn27;
-    public Button btn28;
-    public Button btn29;
-    public Button btn30;
-    public Button btn31;
+public class Controller implements Initializable {
     
+    @FXML private Button btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8,
+        btn9, btn10, btn11, btn12, btn13, btn14, btn15, btn16, btn17, btn18,    
+        btn19, btn20, btn21, btn22, btn23, btn24, btn25, btn26, btn27, btn28,
+        btn29, btn30, btn31;
+    @FXML private Label label;
+    @FXML private Button[] buttons;
+    @FXML private TextField punteggio;
     
-    public void b1(){
-        btn17.setText(btn1.getText());
-    }
-    public void b2(){
-        btn17.setText(btn2.getText());
-    }
-    public void b3(){
-        btn18.setText(btn3.getText());
-    }
-    public void b4(){
-        btn18.setText(btn4.getText());
-    }
-    public void b5(){
-        btn19.setText(btn5.getText());
-    }
-    public void b6(){
-        btn19.setText(btn6.getText());
-    }
-    public void b7(){
-        btn20.setText(btn7.getText());
-    }
-    public void b8(){
-        btn20.setText(btn8.getText());
-    }
-    public void b9(){
-        btn21.setText(btn9.getText());
-    }
-    public void b10(){
-        btn21.setText(btn10.getText());
-    }
-    public void b11(){
-        btn22.setText(btn11.getText());
-    }
-    public void b12(){
-        btn22.setText(btn12.getText());
-    }
-    public void b13(){
-        btn23.setText(btn13.getText());
-    }
-    public void b14(){
-        btn23.setText(btn14.getText());
-    }
-    public void b15(){
-        btn24.setText(btn15.getText());
-    }
-    public void b16(){
-        btn24.setText(btn16.getText());
-    }
-    public void b17(){
-        btn25.setText(btn17.getText());
-    }
-    public void b18(){
-        btn25.setText(btn18.getText());
-    }
-    public void b19(){
-        btn26.setText(btn19.getText());
-    }
-    public void b20(){
-        btn26.setText(btn20.getText());
-    }
-    public void b21(){
-        btn27.setText(btn21.getText());
-    }
-    public void b22(){
-        btn27.setText(btn22.getText());
-    }
-    public void b23(){
-        btn28.setText(btn23.getText());
-    }
-    public void b24(){
-        btn28.setText(btn24.getText());
-    }
-    public void b25(){
-        btn29.setText(btn25.getText());
-    }
-    public void b26(){
-        btn29.setText(btn26.getText());
-    }
-    public void b27(){
-        btn30.setText(btn27.getText());
-    }
-    public void b28(){
-        btn30.setText(btn28.getText());
-    }
-    public void b29(){
-        btn31.setText(btn29.getText());
-    }
-    public void b30(){
-        btn31.setText(btn30.getText());
-    }
-    public void reset(){
-        btn17.setText("");
-        btn18.setText("");
-        btn19.setText("");
-        btn20.setText("");
-        btn21.setText("");
-        btn22.setText("");
-        btn23.setText("");
-        btn24.setText("");
-        btn25.setText("");
-        btn26.setText("");
-        btn27.setText("");
-        btn28.setText("");
-        btn29.setText("");
-        btn30.setText("");
-        btn31.setText("");
-       
+    private int button_control = 1;
+    private int[] punteggi;
+    private int temp;
+   
+    @FXML
+    private void handleButtonAction(ActionEvent event) {
+        if(button_control==1){
+            Button btn_source = (Button)event.getSource();
+            String btn_id = btn_source.getId().replace("btn", "");
+            int b = Integer.parseInt(btn_id);
+            int n, i = b;
+            if(b%2==0){ //pari 
+                for(n = 15; i>2; n--) i-=2; 
+            } 
+            else{ //dispari
+                for(n = 16; i>1; n--) i-=2; 
+            }
+            buttons[(b+n)-1].setText(btn_source.getText());
+            label.setText("Con quale punteggio ha vinto " + btn_source.getText() +"?");
+            temp = b+n-17;
+            button_control = 0;
+        }
     }
     
+    @FXML
+    private void invioButton(ActionEvent event){
+        String text = punteggio.getText();
+        int number; 
+        String valueOfNumber;
+        try{
+            number = Integer.valueOf(text);
+            valueOfNumber = String.valueOf(number);
+        }
+        catch(Exception e){
+            label.setText("HEY! INSERISCI UN NUMERO VERO!");
+            return;
+        }
+        if(button_control==0){
+            label.setText("Ok, ha vinto con " + valueOfNumber + " punti!");
+            punteggi[temp] = number;
+            button_control = 1;
+            punteggio.setText(null);
+            if(!buttons[30].getText().equals("")){
+                label.setText("Il torneo è stato vinto da: " + buttons[30].getText() + " con " + valueOfNumber + " punti!");
+            }
+        }
+        if(button_control==2){
+            label.setText(buttons[number-1].getText() + " ha vinto con " + punteggi[number-17] + " punti!");
+        }
+    }
+    
+    @FXML
+    private void mostraPunteggio(ActionEvent event){
+        label.setText("Di quale posizione vuoi vedere il punteggio? 17->31");
+        button_control = 2;
+    }
+    
+    public Button[] getButtons(){
+        return buttons;
+    }
+    
+    public int[] getPunteggi(){
+        return punteggi;
+    }
+    
+    @Override
+    public void initialize(URL url, ResourceBundle rb){
+        buttons = new Button[]{
+            btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9, btn10, btn11, 
+            btn12, btn13, btn14, btn15, btn16, btn17, btn18, btn19, btn20, 
+            btn21, btn22, btn23, btn24, btn25, btn26, btn27, btn28, btn29, 
+            btn30, btn31};
+        punteggi = new int[15];
+    }   
+        @FXML
+        public void save() {
+        
+        
+        String nick = "";
+        
+        nick = nick + buttons[0].getText();
+        
+        for(int i=1;i< 31;i++){
+            
+             nick = nick + "\n" + buttons[i].getText();
+            }
+        
+            try {
+                BufferedWriter writer = new BufferedWriter(new FileWriter("./save.txt"));
+
+            writer.write(nick);
+
+            writer.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        
+        
+        
+    }
+        
+        public  void load() {  
+    try {
+      File myObj = new File("save.txt");
+      Scanner myReader = new Scanner(myObj); 
+      for(int i=0;i<31;i++){
+          buttons[i].setText(" ");
+      }
+      for (int i =0; i<31; i++) {
+        
+        buttons[i].setText(myReader.nextLine());
+        
+      }
+      myReader.close();
+    } catch (FileNotFoundException e) {
+      System.out.println("An error occurred.");
+      e.printStackTrace();
+    } 
+  }
+   
 }
