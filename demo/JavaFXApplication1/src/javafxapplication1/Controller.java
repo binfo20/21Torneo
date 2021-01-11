@@ -16,6 +16,9 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
+/**
+ * Si occupa della gestione del torneo, Ã¨ il controller del FXML "principale"
+ */
 public class Controller implements Initializable {
     
     @FXML private Button btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8,
@@ -29,6 +32,11 @@ public class Controller implements Initializable {
     private int[] punteggi;
     private int temp;
    
+    /**
+    * @param evento che serve a risalire al bottone (partecipante).
+    * Tramite il bottone si fa proseguire il giocatore scelto chiedendo di 
+    * quanti punti ha vinto. 
+    */
     @FXML
     private void handleButtonAction(ActionEvent event) {
         if(button_control==1){
@@ -50,8 +58,13 @@ public class Controller implements Initializable {
         }
     }
     
+    /**
+     * invia il numero che Ã¨ stato scritto nel textfield e controlla che sia 
+     * effettivamente un numero, controllando inoltre se il numero si riferisce
+     * ad una vittoria o alla posizione del punteggio che si vuole vedere.
+     */
     @FXML
-    private void invioButton(ActionEvent event){
+    private void invioButton(){
         String text = punteggio.getText();
         int number; 
         String valueOfNumber;
@@ -69,7 +82,7 @@ public class Controller implements Initializable {
             button_control = 1;
             punteggio.setText(null);
             if(!buttons[30].getText().equals("")){
-                label.setText("Il torneo è stato vinto da: " + buttons[30].getText() + " con " + valueOfNumber + " punti!");
+                label.setText("Il torneo Ã¨ stato vinto da: " + buttons[30].getText() + " con " + valueOfNumber + " punti!");
             }
         }
         if(button_control==2){
@@ -77,16 +90,21 @@ public class Controller implements Initializable {
         }
     }
     
+    /**
+     * chiede di quale posizione (giocatore) voler vedere il punteggio. 
+     */
     @FXML
-    private void mostraPunteggio(ActionEvent event){
+    private void mostraPunteggio(){
         label.setText("Di quale posizione vuoi vedere il punteggio? 17->31");
         button_control = 2;
     }
-    
-    //Funzione che permette di salvare i nomi dei vari giocatori in un file txt
+
+    /**
+     * salva i dati del torneo in un file di salvataggio .txt.
+     */
     @FXML
     public void save() {
-        String nick = ""; //Nick è la stringa che verrà inserita all'interno del txt
+        String nick = ""; //Nick Ã¨ la stringa che verrÃ  inserita all'interno del txt
         nick = nick + buttons[0].getText(); //Legge il primo nick per evitare problemi di sintassi
         for(int i=1;i< 31;i++){ //For usato per leggere tutti i nomi assegnat a bottoni
             nick = nick + "\n" + buttons[i].getText();
@@ -100,7 +118,9 @@ public class Controller implements Initializable {
         }
     }
        
-    //Funzione che permette di caricare i nomi dei giocari dal file di salvataggio
+    /**
+     * carica i dati del torneo dal file di salvataggio
+     */
     @FXML
     public void load() {  
         try {
@@ -119,7 +139,10 @@ public class Controller implements Initializable {
         } 
     }
     
-    //Funzione che serve per traferire i nomi dalla scena 1 e inserirli nei bottoni nella scena 2 
+    /**
+     * @param giocatori Ã¨ un'array di stringhe, viene ricevuto dal Giocatori.java
+     * nella fase iniziale del programma. 
+     */
     public void transfer(String[] giocatori){ 
         for(int i = 0; i<16; i++) buttons[i].setText(giocatori[i]);
     }
