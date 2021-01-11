@@ -83,41 +83,44 @@ public class Controller implements Initializable {
         button_control = 2;
     }
     
+    //Funzione che permette di salvare i nomi dei vari giocatori in un file txt
     @FXML
     public void save() {
-        String nick = "";
-        nick = nick + buttons[0].getText();
-        for(int i=1;i< 31;i++){
+        String nick = ""; //Nick è la stringa che verrà inserita all'interno del txt
+        nick = nick + buttons[0].getText(); //Legge il primo nick per evitare problemi di sintassi
+        for(int i=1;i< 31;i++){ //For usato per leggere tutti i nomi assegnat a bottoni
             nick = nick + "\n" + buttons[i].getText();
         }
         try {
-            BufferedWriter writer = new BufferedWriter(new FileWriter("./save.txt"));
-            writer.write(nick);
-            writer.close();
+            BufferedWriter writer = new BufferedWriter(new FileWriter("./save.txt")); //Genera il file txt nel caso in cui non esista oppure ci scrive dentro
+            writer.write(nick); // viene traferito il parametro nick da traferire all'interno del txt
+            writer.close(); //chiude le interazioni con il txt
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
        
+    //Funzione che permette di caricare i nomi dei giocari dal file di salvataggio
     @FXML
     public void load() {  
         try {
-            File myObj = new File("save.txt");
+            File myObj = new File("save.txt"); //Si inizializza la variabile di tipo File che contiene il nostro file
             Scanner myReader = new Scanner(myObj); 
-            for(int i=0;i<31;i++){
+            for(int i=0;i<31;i++){ //resettta i nomi all'interno dei bottoni nella scena numero 2 
                 buttons[i].setText(" ");
             }
-            for (int i =0; i<31; i++) {
+            for (int i =0; i<31; i++) { //assegna ad ogni nome il nome segnato nel salvataggio
                 buttons[i].setText(myReader.nextLine());
             }
-            myReader.close();
+            myReader.close();//chiude le interazioni con il txt
         } catch (FileNotFoundException e){
             System.out.println("An error occurred.");
             e.printStackTrace();
         } 
     }
     
-    public void transfer(String[] giocatori){
+    //Funzione che serve per traferire i nomi dalla scena 1 e inserirli nei bottoni nella scena 2 
+    public void transfer(String[] giocatori){ 
         for(int i = 0; i<16; i++) buttons[i].setText(giocatori[i]);
     }
     
