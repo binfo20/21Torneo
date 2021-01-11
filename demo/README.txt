@@ -1,1 +1,1 @@
-Il Javadoc del programma si trova nella cartella dist/javadoc/javafxapplication1
+Questa è la versione del Torneo in versione grafica 

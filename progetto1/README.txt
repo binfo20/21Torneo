@@ -1,0 +1,1 @@
+Questo è il progetto del Torneo in versione testuale
