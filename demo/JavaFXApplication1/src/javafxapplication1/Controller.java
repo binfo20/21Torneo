@@ -59,7 +59,7 @@ public class Controller implements Initializable {
     }
     
     /**
-     * invia il numero che Ã¨ stato scritto nel textfield e controlla che sia 
+     * invia il numero che e'¨stato scritto nel textfield e controlla che sia 
      * effettivamente un numero, controllando inoltre se il numero si riferisce
      * ad una vittoria o alla posizione del punteggio che si vuole vedere.
      */
@@ -140,13 +140,16 @@ public class Controller implements Initializable {
     }
     
     /**
-     * @param giocatori Ã¨ un'array di stringhe, viene ricevuto dal Giocatori.java
+     * @param giocatori e' un'array di stringhe, viene ricevuto dal Giocatori.java
      * nella fase iniziale del programma. 
      */
     public void transfer(String[] giocatori){ 
         for(int i = 0; i<16; i++) buttons[i].setText(giocatori[i]);
     }
     
+    /**
+     * inizializza l'array di bottoni e dei punteggi
+     */
     @Override
     public void initialize(URL url, ResourceBundle rb){
         buttons = new Button[]{
