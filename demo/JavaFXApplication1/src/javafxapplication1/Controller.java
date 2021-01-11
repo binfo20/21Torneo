@@ -109,6 +109,9 @@ public class Controller implements Initializable {
         for(int i=1;i< 31;i++){ //For usato per leggere tutti i nomi assegnat a bottoni
             nick = nick + "\n" + buttons[i].getText();
         }
+        for(int i=1;i< 15;i++){ //For usato per leggere tutti i punteggi
+            nick = nick + "\n" + punteggi[i];
+        }
         try {
             BufferedWriter writer = new BufferedWriter(new FileWriter("./save.txt")); //Genera il file txt nel caso in cui non esista oppure ci scrive dentro
             writer.write(nick); // viene traferito il parametro nick da traferire all'interno del txt
