@@ -20,12 +20,20 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
+/**
+ * Gestisce l'inizializzazione dei giocatori, e' il controller del FP.FXML.
+ */
 public class Giocatori implements Initializable {
 
      @FXML private TextField t1,t2,t3,t4,t5,t6,t7,t8,t9,t10,t11,t12,t13,t14,t15,t16;
      @FXML private TextField [] txts;
      private String nicks[] = new String[16];   
 
+    /**
+     * Invia i giocatori inseriti nei TextFields al Controller.java così da  
+     * poterli mostrare nei bottoni quando viene premuto l'apposito bottone di 
+     * invio. 
+     */
     @FXML
     public void insert () throws Exception{
         for (int i = 0; i<16 ;i++) {
@@ -40,6 +48,9 @@ public class Giocatori implements Initializable {
         stage.show();
     }
     
+    /**
+     * Inizializza l'array di TextField
+     */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         txts = new TextField[]{t1,t2,t3,t4,t5,t6,t7,t8,t9,t10,t11,t12,t13,t14,t15,t16};

@@ -17,7 +17,7 @@ import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 /**
- * Si occupa della gestione del torneo, Ã¨ il controller del FXML "principale"
+ * Si occupa della gestione del torneo, e' il controller del FXML "principale".
  */
 public class Controller implements Initializable {
     
