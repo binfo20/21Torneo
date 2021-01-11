@@ -1,1 +1,1 @@
-Questo programma è solo una rappresentazione di come vorremmo il risultato finale del progetto
+Il Javadoc del programma si trova nella cartella dist/javadoc/javafxapplication1
