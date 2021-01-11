@@ -29,7 +29,7 @@ public class Controller implements Initializable {
     @FXML private Label label;
     @FXML private Button[] buttons;
     @FXML private TextField punteggio;
-    private int button_control = 1;
+    private int button_control;
     private int[] punteggi;
     private int temp;
    
@@ -80,15 +80,15 @@ public class Controller implements Initializable {
         if(button_control==0){
             label.setText("Ok, ha vinto con " + valueOfNumber + " punti!");
             punteggi[temp] = number;
-            button_control = 1;
             punteggio.setText(null);
             if(!buttons[30].getText().equals("")){
-                label.setText("Il torneo Ã¨ stato vinto da: " + buttons[30].getText() + " con " + valueOfNumber + " punti!");
+                label.setText("Il torneo e'¨ stato vinto da: " + buttons[30].getText() + " con " + valueOfNumber + " punti!");
             }
         }
         if(button_control==2){
             label.setText(buttons[number-1].getText() + " ha vinto con " + punteggi[number-17] + " punti!");
         }
+        button_control = 1;
     }
     
     /**
@@ -105,18 +105,23 @@ public class Controller implements Initializable {
      */
     @FXML
     public void save() {
-        String nick = ""; //Nick Ã¨ la stringa che verrÃ  inserita all'interno del txt
-        nick = nick + buttons[0].getText(); //Legge il primo nick per evitare problemi di sintassi
-        for(int i=1;i< 31;i++){ //For usato per leggere tutti i nomi assegnat a bottoni
-            nick = nick + "\n" + buttons[i].getText();
+        String nick = "", points = ""; //Nick Ã¨ la stringa che verrÃ  inserita all'interno del txt
+        nick += buttons[0].getText(); //Legge il primo nick per evitare problemi di sintassi
+        points += punteggi[0];
+        for(int i = 1; i< 31; i++){ //For usato per leggere tutti i nomi assegnat a bottoni
+            nick += "\n" + buttons[i].getText();
         }
-        for(int i=1;i< 15;i++){ //For usato per leggere tutti i punteggi
-            nick = nick + "\n" + punteggi[i];
+        for(int i = 1; i< 15; i++){ //For usato per leggere tutti i punteggi
+            points += " " + punteggi[i];
         }
         try {
-            BufferedWriter writer = new BufferedWriter(new FileWriter("./save.txt")); //Genera il file txt nel caso in cui non esista oppure ci scrive dentro
-            writer.write(nick); // viene traferito il parametro nick da traferire all'interno del txt
-            writer.close(); //chiude le interazioni con il txt
+            BufferedWriter writer_g = new BufferedWriter(new FileWriter("./save_giocatori.txt")); //Genera il file txt nel caso in cui non esista oppure ci scrive dentro
+            BufferedWriter writer_p = new BufferedWriter(new FileWriter("./save_punteggi.txt"));
+            writer_g.write(nick); // viene traferito il parametro nick da traferire all'interno del txt
+            writer_p.write(points);
+            writer_g.close(); //chiude le interazioni con il txt
+            writer_p.close();
+            
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -128,18 +133,15 @@ public class Controller implements Initializable {
     @FXML
     public void load() {  
         try {
-            File myObj = new File("save.txt"); //Si inizializza la variabile di tipo File che contiene il nostro file
-            Scanner myReader = new Scanner(myObj); 
-            for(int i=0;i<31;i++){ //resettta i nomi all'interno dei bottoni nella scena numero 2 
-                buttons[i].setText(" ");
-            }
-            for (int i =0; i<31; i++) { //assegna ad ogni nome il nome segnato nel salvataggio
-                buttons[i].setText(myReader.nextLine());
-            }
-            for(int i=1;i< 15;i++){ //For usato per leggere tutti i punteggi
-               punteggi[i]= parseInt(myReader.nextLine());
-            }
-            myReader.close();//chiude le interazioni con il txt
+            File g = new File("save_giocatori.txt"); 
+            File p = new File("save_punteggi.txt");
+            Scanner read_giocatori = new Scanner(g); 
+            Scanner read_punteggi = new Scanner(p);
+            for(int i=0;i<31;i++) buttons[i].setText(""); 
+            for (int i = 0; i<31; i++) buttons[i].setText(read_giocatori.nextLine());
+            for(int i = 0; i<15;i++) punteggi[i] = read_punteggi.nextInt();
+            read_giocatori.close();
+            read_punteggi.close();
         } catch (FileNotFoundException e){
             System.out.println("An error occurred.");
             e.printStackTrace();
@@ -165,6 +167,7 @@ public class Controller implements Initializable {
             btn21, btn22, btn23, btn24, btn25, btn26, btn27, btn28, btn29, 
             btn30, btn31};
         punteggi = new int[15]; 
+        button_control = 1;
     }  
    
 }
