@@ -14,6 +14,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import java.io.File;
 import java.io.FileNotFoundException;
+import static java.lang.Integer.parseInt;
 import java.util.Scanner;
 
 /**
@@ -134,6 +135,9 @@ public class Controller implements Initializable {
             }
             for (int i =0; i<31; i++) { //assegna ad ogni nome il nome segnato nel salvataggio
                 buttons[i].setText(myReader.nextLine());
+            }
+            for(int i=1;i< 15;i++){ //For usato per leggere tutti i punteggi
+               punteggi[i]= parseInt(myReader.nextLine());
             }
             myReader.close();//chiude le interazioni con il txt
         } catch (FileNotFoundException e){
